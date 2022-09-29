@@ -10,13 +10,13 @@ data "aws_ami" "aws_basic_linux" {
 data "aws_vpc" "main_vpc" {
   filter {
     name   = "tag:Name"
-    values = [var.vpc_name]
+    values = [var.main_vpc]
   }
 }
 
-data "aws_subnet" "publicsubnetOne"{
+data "aws_subnet" "subnet"{
     filter{
         name="tag:Name"
-        values=[var.publicsubnetOne]
+        values=[var.publicSubnetOne]
     }
 }
