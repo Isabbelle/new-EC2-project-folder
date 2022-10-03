@@ -20,5 +20,5 @@ resource "aws_security_group" "app_sg" {
     protocol    = "-1" # TCP + UDP
     cidr_blocks = ["0.0.0.0/0"]
   }
-  
+
 }

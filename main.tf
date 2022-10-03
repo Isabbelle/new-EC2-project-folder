@@ -1,5 +1,5 @@
-data "aws_ami" "aws_basic_linux" {
-  owners      = [var.aws_owner_id]
+data "aws_ami" "aws_linux_image" {
+  owners      = [var.aws_ami_owner]
   most_recent = true
   filter {
     name   = "name"
@@ -14,11 +14,11 @@ data "aws_vpc" "main_vpc" {
   }
 }
 
-data "aws_subnet" "subnet"{
-    filter{
-        name="tag:Name"
-        values=[var.public_subnetOne_name]
-    }
+data "aws_subnet" "public_subnetOne" {
+  filter {
+    name   = "tag:Name"
+    values = [var.public_subnetOne_name]
+  }
 }
 
 #instead of resource we use data source so we can gather info from AWS, downlading info from what we already have
