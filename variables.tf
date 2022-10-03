@@ -7,14 +7,14 @@ variable "aws_ami_name"{
     type = string
 }
 
-variable "main_vpc"{
+variable "vpc_name"{
    
-    description="what vpc I'm going to use"
+    description="name of my vpc"
     type=string
 
 }
 
-variable "aws_subnet" {
+variable "public_subnetOne_name" {
     description="what subnet I'm going to use"
     type=string
 }

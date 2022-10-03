@@ -10,13 +10,15 @@ data "aws_ami" "aws_basic_linux" {
 data "aws_vpc" "main_vpc" {
   filter {
     name   = "tag:Name"
-    values = [var.main_vpc]
+    values = [var.vpc_name]
   }
 }
 
 data "aws_subnet" "subnet"{
     filter{
         name="tag:Name"
-        values=[var.publicSubnetOne]
+        values=[var.public_subnetOne_name]
     }
 }
+
+#instead of resource we use data source so we can gather info from AWS, downlading info from what we already have

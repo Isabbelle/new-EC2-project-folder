@@ -1,6 +1,6 @@
-resource "aws_security_group" "my_public_app_sg" {
-  name        = "my_public_app_sg"
-  description = "Allow access to this server"
+resource "aws_security_group" "app_sg" {
+  name        = "movie-app-sg"
+  description = "SG for our Movie mgmt Application"
   vpc_id      = data.aws_vpc.main_vpc.id
 
   # INBOUND CONNECTIONS
@@ -20,4 +20,5 @@ resource "aws_security_group" "my_public_app_sg" {
     protocol    = "-1" # TCP + UDP
     cidr_blocks = ["0.0.0.0/0"]
   }
+  
 }
