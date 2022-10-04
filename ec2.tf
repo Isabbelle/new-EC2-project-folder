@@ -9,4 +9,5 @@ key_name = var.keypair_name
   tags = {
     Name = "my-first-server"
   }
+  associate_public_ip_address = true
 }
