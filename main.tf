@@ -1,3 +1,4 @@
+#it's ami for ubuntu not linux
 data "aws_ami" "aws_linux_image" {
   owners      = [var.aws_ami_owner]
   most_recent = true
