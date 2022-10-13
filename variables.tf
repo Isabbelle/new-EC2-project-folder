@@ -54,13 +54,13 @@ variable "db_skip_final_snapshot" {
   default     = true
 }
 
-variable "private_subnet_a"{
+variable "private_subnet_a" {
   description="private subnet a"
-  type=string
+  
 
 }
 variable "private_subnet_b"{
   description="private subnet b"
-  type=string
+  
   
 }

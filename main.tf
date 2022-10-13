@@ -35,11 +35,11 @@ data "aws_subnet" "private_subnet_b"{
   }
 }
 
-data "aws_secretsmanager_secret" "movie_db_password" {
-  arn = "movie-db-password"
+data "aws_secretsmanager_secret" "movie_db_secret" {
+  name = "movie-db-password"
 }
 
-data "aws_secretsmanager_secret_version" "movie_db_secret" {
-  secret_id = data.aws_secretsmanager_secret.movie_db_secret.id
+data "aws_secretsmanager_secret_version" "movie_db_pw" {
+  secret_id = data.aws_secretsmanager_secret.movie_db_password.id
 }
 #instead of resource we use data source so we can gather info from AWS, downlading info from what we already have
