@@ -3,7 +3,7 @@ resource "aws_instance" "app_server" {
   instance_type          = var.app_ec2_type
   subnet_id              = data.aws_subnet.public_subnetOne.id
   vpc_security_group_ids = [aws_security_group.app_sg.id]
-  key_name = var.keypair_name
+  key_name               = var.keypair_name
 
 
   tags = {

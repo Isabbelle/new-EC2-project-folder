@@ -25,3 +25,31 @@ variable "app_ec2_type" {
 }
 
 variable "keypair_name" {}
+variable "db_name" {
+  description = "name of the db"
+}
+variable "db_storage" {
+  description = "Name of the database"
+}
+variable "db_engine" {
+  description = "db engine that the rds will run on"
+}
+
+variable "db_engine_version" {
+  description = "the version of mysql that will be used"
+}
+
+variable "db_instance_class" {
+  descirption = "the type of instance on which the db will run"
+}
+
+variable "username" {
+  description = "my username to connect to DB"
+}
+
+variable "db_parameter_group_name" {}
+
+variable "db_skip_final_snapshot" {
+  description = "do not take snapshot before destroying"
+  default     = true
+}
