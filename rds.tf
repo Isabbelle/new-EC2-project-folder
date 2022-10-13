@@ -7,17 +7,21 @@ resource "aws_db_instance" "myRds" {
   username             = var.db_username
   password             = ""
   skip_final_snapshot  = var.db_parameter_group_name
-
+  db_subnet_group_name = aws_db_subnet_group.db_subnet_group.id
+  vpc_security_group_ids = [aws_security_group.id]
   tags = {
     Name = "movie-management-rds"
   }
 }
 
 
-data "aws_db_subnet_group" "myRdsSubnet" {
+resource "aws_db_subnet_group" "aws_db_subnet_group" {
   name       = "main"
-  subnet_ids = aws_subnet.public_subnetOne.id
+  subnet_ids = [aws_subnet.private_subnet_a.id, aws_subnet.private_subnet_b.id]
 
   tags = {
     Name = "My DB subnet group"
   }
+}
+
+

@@ -40,16 +40,27 @@ variable "db_engine_version" {
 }
 
 variable "db_instance_class" {
-  descirption = "the type of instance on which the db will run"
+  description = "the type of instance on which the db will run"
 }
 
 variable "username" {
   description = "my username to connect to DB"
 }
 
-variable "db_parameter_group_name" {}
+
 
 variable "db_skip_final_snapshot" {
   description = "do not take snapshot before destroying"
   default     = true
+}
+
+variable "private_subnet_a"{
+  description="private subnet a"
+  type=string
+
+}
+variable "private_subnet_b"{
+  description="private subnet b"
+  type=string
+  
 }
